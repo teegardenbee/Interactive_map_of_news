@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4403d0ec787ca2880014f72fdc71a8dd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4403d0ec787ca2880014f72fdc71a8dd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4403d0ec787ca2880014f72fdc71a8dd = L.map(
+                "map_4403d0ec787ca2880014f72fdc71a8dd",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "maxBounds": [
+[
+-90,
+-180,
+],
+[
+90,
+180,
+],
+],
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a7318a39abd0c41b8c3fcd7470089f2b = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 2,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a7318a39abd0c41b8c3fcd7470089f2b.addTo(map_4403d0ec787ca2880014f72fdc71a8dd);
+        
+    
+            map_4403d0ec787ca2880014f72fdc71a8dd.fitBounds(
+                [[-90, -180], [90, 180]],
+                {}
+            );
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topright",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_4403d0ec787ca2880014f72fdc71a8dd);
+        
+    
+            var marker_cluster_2ab59aefde127ae3963193f579762b54 = L.markerClusterGroup(
+                {
+}
+            );
+            marker_cluster_2ab59aefde127ae3963193f579762b54.options.iconCreateFunction =
+                function(cluster) {
+    return L.divIcon({
+        html: '<div style="background-color: brown; color: white; border-radius: 50%; padding: 5px;">' + cluster.getChildCount() + '</div>',
+        className: 'marker-cluster',
+        iconSize: [30, 30]
+    });
+};
+        
+    
+            var marker_41bcfa7a5d291a1839d086d5735f62fd = L.marker(
+                [32.6475314, 54.5643516],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_dc6b0ae88e7ac8d12a669493f7f459bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_41bcfa7a5d291a1839d086d5735f62fd.setIcon(icon_dc6b0ae88e7ac8d12a669493f7f459bc);
+        
+    
+        var popup_0bec5f592ff104e49448ace028dd2cf1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aefa03495307a0ab75a400989202958c = $(`<div id="html_aefa03495307a0ab75a400989202958c" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(120 commandos, 3 hours: Inside Israel’s daring mission to bust Iran missile factory in Syria)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_0bec5f592ff104e49448ace028dd2cf1.setContent(html_aefa03495307a0ab75a400989202958c);
+            
+        
+
+        marker_41bcfa7a5d291a1839d086d5735f62fd.bindPopup(popup_0bec5f592ff104e49448ace028dd2cf1)
+        ;
+
+        
+    
+    
+            var marker_a1bd44dd339839c44c8cb7a5d1f5380d = L.marker(
+                [22.3511148, 78.6677428],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_cc8e0783ba4abc69178b77d14e938196 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a1bd44dd339839c44c8cb7a5d1f5380d.setIcon(icon_cc8e0783ba4abc69178b77d14e938196);
+        
+    
+        var popup_c0a696df715976e0dfef11672dc74d31 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0c34cf710279536d651d89028b6769dd = $(`<div id="html_0c34cf710279536d651d89028b6769dd" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(How Hizb ut Tahrir can become a destabilising factor in Indian subcontinent)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_c0a696df715976e0dfef11672dc74d31.setContent(html_0c34cf710279536d651d89028b6769dd);
+            
+        
+
+        marker_a1bd44dd339839c44c8cb7a5d1f5380d.bindPopup(popup_c0a696df715976e0dfef11672dc74d31)
+        ;
+
+        
+    
+    
+            var marker_f665b9f9245d77c9b5b27795c1fc0612 = L.marker(
+                [36.638392, 127.6961188],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_a3d358b902602d841e1a602f3e642401 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f665b9f9245d77c9b5b27795c1fc0612.setIcon(icon_a3d358b902602d841e1a602f3e642401);
+        
+    
+        var popup_82ad158401d5ca7b597c8d7335b31b20 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9d2a869edc8e95c7e11a0b8c0ac94977 = $(`<div id="html_9d2a869edc8e95c7e11a0b8c0ac94977" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(Blinken to visit South Korea next week amid political crisis)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_82ad158401d5ca7b597c8d7335b31b20.setContent(html_9d2a869edc8e95c7e11a0b8c0ac94977);
+            
+        
+
+        marker_f665b9f9245d77c9b5b27795c1fc0612.bindPopup(popup_82ad158401d5ca7b597c8d7335b31b20)
+        ;
+
+        
+    
+    
+            var marker_e1477c216af70328ec277d4f48eb83eb = L.marker(
+                [35.0000663, 104.999955],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_30b868a1a4bc9a356c2eaa095ff60aa2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e1477c216af70328ec277d4f48eb83eb.setIcon(icon_30b868a1a4bc9a356c2eaa095ff60aa2);
+        
+    
+        var popup_8524454514ef541f78c3fa1baef598f9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d3888ab6ea52038ef84b379b845ba22c = $(`<div id="html_d3888ab6ea52038ef84b379b845ba22c" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(How China's 6th-gen aircraft will affect India, US, and global geopolitics)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_8524454514ef541f78c3fa1baef598f9.setContent(html_d3888ab6ea52038ef84b379b845ba22c);
+            
+        
+
+        marker_e1477c216af70328ec277d4f48eb83eb.bindPopup(popup_8524454514ef541f78c3fa1baef598f9)
+        ;
+
+        
+    
+    
+            var marker_b0e38071fd183d18923a10fc54953aac = L.marker(
+                [-41.5000831, 172.8344077],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_c171bf7eb89078f3d5370020abc9b781 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b0e38071fd183d18923a10fc54953aac.setIcon(icon_c171bf7eb89078f3d5370020abc9b781);
+        
+    
+        var popup_61c03c15ddf1537298ebe42a2481d120 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ad548ffef5fe0b4cf3b769fc1fab55a4 = $(`<div id="html_ad548ffef5fe0b4cf3b769fc1fab55a4" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(New Zealand Welcomes New Year With Grand Fireworks Display | Vantage with Palki Sharma)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_61c03c15ddf1537298ebe42a2481d120.setContent(html_ad548ffef5fe0b4cf3b769fc1fab55a4);
+            
+        
+
+        marker_b0e38071fd183d18923a10fc54953aac.bindPopup(popup_61c03c15ddf1537298ebe42a2481d120)
+        ;
+
+        
+    
+    
+            var marker_4ecdf813c1f734c1f3ff6e6d4e369efa = L.marker(
+                [64.6863136, 97.7453061],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_074a36cb8bfa1f0e537278b0514e7cd2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4ecdf813c1f734c1f3ff6e6d4e369efa.setIcon(icon_074a36cb8bfa1f0e537278b0514e7cd2);
+        
+    
+        var popup_656225e52b815b96d72dc194bd35ee1c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cd4a74ed23e45b9850b9a1cfca43ab35 = $(`<div id="html_cd4a74ed23e45b9850b9a1cfca43ab35" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(Russia Rejects Donald Trump's Peace Proposal to End Ukraine War | Firstpost America)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_656225e52b815b96d72dc194bd35ee1c.setContent(html_cd4a74ed23e45b9850b9a1cfca43ab35);
+            
+        
+
+        marker_4ecdf813c1f734c1f3ff6e6d4e369efa.bindPopup(popup_656225e52b815b96d72dc194bd35ee1c)
+        ;
+
+        
+    
+    
+            var marker_4c591e0423b42c51a41af85ef5f18775 = L.marker(
+                [30.8124247, 34.8594762],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_3818e74528f039ded9b4735322999bfc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4c591e0423b42c51a41af85ef5f18775.setIcon(icon_3818e74528f039ded9b4735322999bfc);
+        
+    
+        var popup_77d4aa44f8324ff321c0b659431e74b2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_111e2c76ea6113e88c4bd61dccc81fb9 = $(`<div id="html_111e2c76ea6113e88c4bd61dccc81fb9" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(How Israel's "AI Factory" Became a Game-Changer in Netanyahu's War Against Hamas | Firstpost America)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_77d4aa44f8324ff321c0b659431e74b2.setContent(html_111e2c76ea6113e88c4bd61dccc81fb9);
+            
+        
+
+        marker_4c591e0423b42c51a41af85ef5f18775.bindPopup(popup_77d4aa44f8324ff321c0b659431e74b2)
+        ;
+
+        
+    
+    
+            var marker_81123a979446d152bf239ee6736197b9 = L.marker(
+                [61.0666922, -107.991707],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_806e45509bed4d0874d8c984cb0369e1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_81123a979446d152bf239ee6736197b9.setIcon(icon_806e45509bed4d0874d8c984cb0369e1);
+        
+    
+        var popup_bddfd2736f2c2c2b1092bfc4ab34152b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bd883449ed2ab7eea81cefcd53eaafc2 = $(`<div id="html_bd883449ed2ab7eea81cefcd53eaafc2" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(Canada: Trudeau Heckled in Public, Angry Local Asks Him to "Get the F**k Out!" | Firstpost America)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_bddfd2736f2c2c2b1092bfc4ab34152b.setContent(html_bd883449ed2ab7eea81cefcd53eaafc2);
+            
+        
+
+        marker_81123a979446d152bf239ee6736197b9.bindPopup(popup_bddfd2736f2c2c2b1092bfc4ab34152b)
+        ;
+
+        
+    
+    
+            var marker_edf081ac00aa7405aaf48f80016d0ea8 = L.marker(
+                [1.4419683, 38.4313975],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_48b4645388b19f4168bfb309578f57b3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_edf081ac00aa7405aaf48f80016d0ea8.setIcon(icon_48b4645388b19f4168bfb309578f57b3);
+        
+    
+        var popup_4a72ed255e0b4e40898627cc7e70ba3c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_da6c1af8ce1f3333c4ce0a724bb0ff56 = $(`<div id="html_da6c1af8ce1f3333c4ce0a724bb0ff56" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(Protests, Teargas & Violence Back in Kenya | Firstpost Africa)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_4a72ed255e0b4e40898627cc7e70ba3c.setContent(html_da6c1af8ce1f3333c4ce0a724bb0ff56);
+            
+        
+
+        marker_edf081ac00aa7405aaf48f80016d0ea8.bindPopup(popup_4a72ed255e0b4e40898627cc7e70ba3c)
+        ;
+
+        
+    
+    
+            var marker_7edfda0106b92727447dec971939e3c8 = L.marker(
+                [10.2116702, 38.6521203],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_ba9c30be1a8ed40602d5f31df77c419d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7edfda0106b92727447dec971939e3c8.setIcon(icon_ba9c30be1a8ed40602d5f31df77c419d);
+        
+    
+        var popup_b0bed609b5f859586dce0f6795fe8c79 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dddff1e1e869c3fc648096f22aa9e869 = $(`<div id="html_dddff1e1e869c3fc648096f22aa9e869" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(Ethiopia Road Accident: 71 Killed | Firstpost Africa)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_b0bed609b5f859586dce0f6795fe8c79.setContent(html_dddff1e1e869c3fc648096f22aa9e869);
+            
+        
+
+        marker_7edfda0106b92727447dec971939e3c8.bindPopup(popup_b0bed609b5f859586dce0f6795fe8c79)
+        ;
+
+        
+    
+    
+            var marker_f124bcd115daa5d3e654a77bdf7f8156 = L.marker(
+                [26.8234472, 18.1236723],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_82e4624e1070c8f888e3278b809a978c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f124bcd115daa5d3e654a77bdf7f8156.setIcon(icon_82e4624e1070c8f888e3278b809a978c);
+        
+    
+        var popup_5f06378dd39f2af360f03848051d1921 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6b84b0b218a433c6216527c7fbe9b0c2 = $(`<div id="html_6b84b0b218a433c6216527c7fbe9b0c2" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(Exposed: Xi's Plan To Arm Libyan Warlord | Firstpost Africa)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_5f06378dd39f2af360f03848051d1921.setContent(html_6b84b0b218a433c6216527c7fbe9b0c2);
+            
+        
+
+        marker_f124bcd115daa5d3e654a77bdf7f8156.bindPopup(popup_5f06378dd39f2af360f03848051d1921)
+        ;
+
+        
+    
+    
+            var marker_0a3fef0ef1af131d1ee676b294b61254 = L.marker(
+                [34.8147886, 38.42317811509885],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_93a093d0b11b9b71ff70856c7c71fb70 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0a3fef0ef1af131d1ee676b294b61254.setIcon(icon_93a093d0b11b9b71ff70856c7c71fb70);
+        
+    
+        var popup_bfeb799eb1d5a8b34192b4194ed1b703 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c07cced5264d7b55920999de4da528ea = $(`<div id="html_c07cced5264d7b55920999de4da528ea" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(120 commandos, 3 hours: Inside Israel’s daring mission to bust Iran missile factory in Syria)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_bfeb799eb1d5a8b34192b4194ed1b703.setContent(html_c07cced5264d7b55920999de4da528ea);
+            
+        
+
+        marker_0a3fef0ef1af131d1ee676b294b61254.bindPopup(popup_bfeb799eb1d5a8b34192b4194ed1b703)
+        ;
+
+        
+    
+    
+            var marker_3dd9434c3a18f27fe068cb3a77ceeeeb = L.marker(
+                [49.4871968, 31.2718321],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_d993582a60f580da200aa9f853d27878 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3dd9434c3a18f27fe068cb3a77ceeeeb.setIcon(icon_d993582a60f580da200aa9f853d27878);
+        
+    
+        var popup_e450fcc27c1349372d777d370d4655e3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d2abbd5e110950688669f47f401218f4 = $(`<div id="html_d2abbd5e110950688669f47f401218f4" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(Trump 2.0 brings hopes of peace in Ukraine in 2025, but challenges remain)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_e450fcc27c1349372d777d370d4655e3.setContent(html_d2abbd5e110950688669f47f401218f4);
+            
+        
+
+        marker_3dd9434c3a18f27fe068cb3a77ceeeeb.bindPopup(popup_e450fcc27c1349372d777d370d4655e3)
+        ;
+
+        
+    
+    
+            var marker_93ada22114e428ea004c0923383cd864 = L.marker(
+                [-24.7761086, 134.755],
+                {
+}
+            ).addTo(marker_cluster_2ab59aefde127ae3963193f579762b54);
+        
+    
+            var icon_c43edab51b02aeb98919890013faa317 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_93ada22114e428ea004c0923383cd864.setIcon(icon_c43edab51b02aeb98919890013faa317);
+        
+    
+        var popup_9db2444a375f9e1ba5d3d27871a6a08f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fe4626a52ebf30547758371ca71f8ba7 = $(`<div id="html_fe4626a52ebf30547758371ca71f8ba7" style="width: 100.0%; height: 100.0%;"><div style="background-color: #eae3e3; border: 2px solid #333; border-radius: 10px; padding: 10px; color: #333; font-size: 14px;">(WTC Final Scenarios: What India and Australia need to do to face South Africa in summit clash at Lord's)<br><a href="https://www.firstpost.com" target="_blank" style="color: #0066cc; text-decoration: none;">Visit Firstpost</a></div></div>`)[0];
+                popup_9db2444a375f9e1ba5d3d27871a6a08f.setContent(html_fe4626a52ebf30547758371ca71f8ba7);
+            
+        
+
+        marker_93ada22114e428ea004c0923383cd864.bindPopup(popup_9db2444a375f9e1ba5d3d27871a6a08f)
+        ;
+
+        
+    
+    
+            marker_cluster_2ab59aefde127ae3963193f579762b54.addTo(map_4403d0ec787ca2880014f72fdc71a8dd);
+        
+    
+            tile_layer_a7318a39abd0c41b8c3fcd7470089f2b.addTo(map_4403d0ec787ca2880014f72fdc71a8dd);
+        
+    
+            marker_cluster_2ab59aefde127ae3963193f579762b54.addTo(map_4403d0ec787ca2880014f72fdc71a8dd);
+        
+</script>
+</html>
